@@ -1,3 +1,7 @@
+from os import system
+
+system('cls')
+
 def Logo():
     Name = """
           ___ ___         .__  .__  ___________.__                
@@ -9,7 +13,7 @@ def Logo():
        
                           9 H I T S   E X P L O I T
         ___________________________________________________________
-                                Version: 1.0"""
+                                Version:\033[92m 1.0 \033[0m"""
     print("\033[6m" + Name + "\033[0m")
     print("                              Made By:\033[91m HellFire \033[0m")
     print("                            Helper:\033[34m Dean Richards \033[0m")
