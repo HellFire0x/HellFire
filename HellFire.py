@@ -1,6 +1,18 @@
 from os import system
+import json, urllib.request
 
 system('cls')
+
+def datas():
+    data = urllib.request.urlopen("https://panel.9hits.com/api/profileGet?key=b235add0de15a138ed4b0f618b10370e").read()
+    output = json.loads(data)
+    print(output["status"])
+
+def log(logger):
+    print("        [\033[92m-\033[0m] - " + logger)
+
+def GiveSpace():
+    print("\n\n")
 
 def Logo():
     Name = """\033[93m
@@ -29,10 +41,19 @@ def main():
     for x in Command:
         print(x)
 
-    Cmd = raw_input("        [+]> ")
+    Cmd = raw_input("        [\033[92m+\033[0m]> ")
     if Cmd == "1":
-        #Command 1
+        datas()
+    if Cmd == "2":
+        #Command 2
         print("")
+    if Cmd == "3":
+        GiveSpace()
+        log("https://ftp.9hits.com/")
+        log("https://f.9hits.com/")
+        log("https://forum.9hits.com/")
+        log("https://mail.9hits.com/")
+        log("https://www.9hits.com/")
 
 
 main()
