@@ -2,9 +2,9 @@ import json
 import urllib.request
 from os import system
 
-Version = "1.1"
-Developer = "HellFire"
-Helper = "Dean Richards"
+Version = '1.1'
+Developer = 'HellFire'
+Helper = 'Dean Richards'
 
 from pip._vendor.distlib.compat import raw_input
 
@@ -14,7 +14,7 @@ system('cls')
 def datas() -> object:
     data = urllib.request.urlopen("https://panel.9hits.com/api/profileGet?key=b235add0de15a138ed4b0f618b10370e").read()
     output = json.loads(data)
-    return print(output["status"])
+    return print(output['status'])
 
 
 def log(logger) -> object:
@@ -39,9 +39,9 @@ def logo() -> object:
         "___________________________________________________________\n                                Version:\u001B["
         "92m {0} \u001B[0m".format(
             Version))
-    print("\u001B[6m{0}\u001B[0m".format(Name))
-    print("                              Made By:\u001B[91m {0}  \u001B[0m".format(Developer))
-    print("                            Helper:\u001B[34m {0} \u001B[0m".format(Helper))
+    print(f"\u001B[6m{Name}\u001B[0m")
+    print(f"                              Made By:\u001B[91m {Developer}  \u001B[0m")
+    print(f"                            Helper:\u001B[34m {Helper} \u001B[0m")
 
 
 def main():
