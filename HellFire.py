@@ -1,54 +1,65 @@
+import json
+import urllib.request
 from os import system
-import json, urllib.request
+
+Version = "1.1"
+Developer = "HellFire"
+Helper = "Dean Richards"
+
+from pip._vendor.distlib.compat import raw_input
 
 system('cls')
 
-def datas():
+
+def datas() -> object:
     data = urllib.request.urlopen("https://panel.9hits.com/api/profileGet?key=b235add0de15a138ed4b0f618b10370e").read()
     output = json.loads(data)
-    print(output["status"])
+    return print(output["status"])
 
-def log(logger):
-    print("        [\033[92m-\033[0m] - " + logger)
 
-def GiveSpace():
-    print("\n\n")
+def log(logger) -> object:
+    return print("        [\033[92m-\033[0m] - " + logger)
 
-def Logo():
-    Name = """\033[93m
-          ___ ___         .__  .__  ___________.__                
-         /   |   \   ____ |  | |  | \_   _____/|__|______   ____  
-        /    ~    \_/ __ \|  | |  |  |    __)  |  \_  __ \_/ __ \ 
-        \    Y    /\  ___/|  |_|  |__|     \   |  ||  | \/\  ___/ 
-         \___|_  /  \___  >____/____/\___  /   |__||__|    \___  >
-               \/       \/               \/                    \/ 
- \033[0m      
-                          9 H I T S   E X P L O I T
-        ___________________________________________________________
-                                Version:\033[92m 1.0 \033[0m"""
-    print("\033[6m" + Name + "\033[0m")
-    print("                              Made By:\033[91m HellFire \033[0m")
-    print("                            Helper:\033[34m Dean Richards \033[0m")
+
+def givespace() -> object:
+    """
+
+    :rtype: object
+    """
+    return print("\n\n")
+
+
+def logo() -> object:
+    Name = (
+        "\u001B[93m\n          ___ ___         .__  .__  ___________.__                \n         /   |   \\   ____ | "
+        " | |  | \\_   _____/|__|______   ____  \n        /    ~    \\_/ __ \\|  | |  |  |    __)  |  \\_  __ \\_/ __ "
+        "\\ \n        \\    Y    /\\  ___/|  |_|  |__|     \\   |  ||  | \\/\\  ___/ \n         \\___|_  /  \\___  "
+        ">____/____/\\___  /   |__||__|    \\___  >\n               \\/       \\/               \\/                   "
+        " \\/ \n \u001B[0m      \n                          9 H I T S   E X P L O I T\n        "
+        "___________________________________________________________\n                                Version:\u001B["
+        "92m {0} \u001B[0m".format(
+            Version))
+    print("\u001B[6m{0}\u001B[0m".format(Name))
+    print("                              Made By:\u001B[91m {0}  \u001B[0m".format(Developer))
+    print("                            Helper:\u001B[34m {0} \u001B[0m".format(Helper))
+
 
 def main():
-    Logo()
-    Command = [
-    "        1) 9Hits Data",
-    "        2) API Finder",
-    "        3) 9Hits Links",
-    ""]
-
-    for x in Command:
+    logo()
+    for x in [
+        "        1) 9Hits Data",
+        "        2) API Finder",
+        "        3) 9Hits Links\n"]:
         print(x)
 
     Cmd = raw_input("        [\033[92m+\033[0m]> ")
     if Cmd == "1":
         datas()
     if Cmd == "2":
-        #Command 2
+        # Command 23
         print("")
     if Cmd == "3":
-        GiveSpace()
+        givespace()
         log("https://ftp.9hits.com/")
         log("https://f.9hits.com/")
         log("https://forum.9hits.com/")
